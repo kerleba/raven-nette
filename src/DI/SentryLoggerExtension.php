@@ -75,8 +75,14 @@ class SentryLoggerExtension extends CompilerExtension
         $defaults['directory'] = Debugger::$logDirectory;
         $defaults['email'] = Debugger::$email;
         $defaults['options'] = [];
+        $defaults['enabled'] = true;
 
         $config = $this->getConfig($defaults);
+
+        if (!$config['enabled'])
+        {
+            return;
+        }
 
         Validators::assertField($config, 'dsn', 'string');
 
