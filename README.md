@@ -27,6 +27,7 @@ And configure by setting:
 
 ```yaml
 sentryLogger:
+  enabled: true # bool: set false to disable extension, default true
   dsn: 'YOUR_SENTRY_DSN'
 
   # Optional configuration values
